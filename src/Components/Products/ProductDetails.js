@@ -3,8 +3,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './ProductDetails.css'
 import Nav from '../Nav.js'
+import Reviews from "../Reviews/Reviews";
 const API = process.env.REACT_APP_API_URL;
 
 export default function ProductDetails() {
@@ -68,14 +70,17 @@ export default function ProductDetails() {
       {product.instock ? 'In Stock' : 'Out of Stock'}
     </p>
     </Container>
-    <div>
+    <div className="buttons">
     <button onClick={handleAddToCart}>Add to Cart</button>
-    <button onClick={showModal}>DELETE</button>
+    <Link to={'/products'}>
+      <button>Go Back</button>
+      </Link>
+    <button onClick={showModal}>Delete</button>
         <Modal show={isOpen} onHide={hideModal}>
         <Modal.Header>
           <Modal.Title>Confirmation</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to delete this snack?</Modal.Body>
+        <Modal.Body>Are you sure you want to delete this product?</Modal.Body>
         <Modal.Footer>
           <button onClick={hideModal}>CANCEL</button>
           <button onClick={handleDelete}>DELETE</button>
@@ -83,6 +88,7 @@ export default function ProductDetails() {
       </Modal>
       </div>
   </div>
+  <Reviews />
 </div>
   );
 };

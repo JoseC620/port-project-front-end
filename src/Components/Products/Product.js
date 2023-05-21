@@ -1,4 +1,3 @@
-import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../App.css'
 export default function Product( { product } ) {

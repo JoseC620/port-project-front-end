@@ -6,11 +6,12 @@ import { useState } from 'react';
 
 export default function Nav( { product } ) {
 
-    const [cartItems, setCartItems] = useState([]); // State for cart items
-    const [isCartOpen, setIsCartOpen] = useState(false); // State for cart visibility
+    const [cartItems, setCartItems] = useState([]);
+    const [isCartOpen, setIsCartOpen] = useState(false);
   
     const toggleCart = () => {
       setIsCartOpen(!isCartOpen);
+      console.log(product)
     };
   
 
@@ -21,6 +22,7 @@ export default function Nav( { product } ) {
           <Link to={'/products'} style={{color: "Black"}}>All Products </Link>
           <Link to={'/products/new'} style={{color: "Black"}}>Make A New Product!</Link>
         <button onClick={toggleCart}><img src='https://www.iconpacks.net/icons/2/free-shopping-cart-icon-3041.png' height='30px'/></button>
+        <div>
         {isCartOpen && (
           <div>
             {cartItems.length > 0 ? (
@@ -35,6 +37,7 @@ export default function Nav( { product } ) {
             )}
           </div>
         )}
+        </div>
 
         </Container>
     </Navbar>

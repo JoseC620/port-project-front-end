@@ -1,0 +1,47 @@
+.reviews {
+    margin-top: 20px;
+  }
+  
+.reviews h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+.reviews ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+.reviews li {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+.reviews li h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+.reviews li p {
+    margin: 0;
+  }
+  
+.reviews p.no-reviews {
+    font-style: italic;
+}
+  
+.no-reviews {
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.newReview {
+  margin-left: 150px;
+}

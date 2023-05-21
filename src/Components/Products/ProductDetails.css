@@ -14,7 +14,6 @@
   .product-details-image {
     width: 300px;
     height: 300px;
-    object-fit: cover;
     border-radius: 6px;
     margin-right: 20px;
   }
@@ -54,3 +53,6 @@
     background-color: #0056b3;
   }
   
+  .buttons {
+    margin-left: 50px;
+  }

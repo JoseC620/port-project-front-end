@@ -26,12 +26,12 @@ export default function Products() {
     }, [])
 
     const sortBycostAscending = () => {
-        const sortedProducts = [...products].sort((a, b) => a.cost - b.cost);
+        const sortedProducts = [...sorted].sort((a, b) => a.cost - b.cost);
         setSorted(sortedProducts);
       };
     
       const sortBycostDescending = () => {
-        const sortedProducts = [...products].sort((a, b) => b.cost - a.cost);
+        const sortedProducts = [...sorted].sort((a, b) => b.cost - a.cost);
         setSorted(sortedProducts);
       };
 
@@ -39,7 +39,7 @@ export default function Products() {
         if(event.value === "All"){
         setSorted(products)
         }
-        else if(sorted){
+        else if(sorted && event.value !== "All"){
         const sortedProducts = products.filter((product) => product.category === event.value)
         setSorted(sortedProducts);
         } else {
