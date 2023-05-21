@@ -2,7 +2,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import './ProductDetails.css'
+import Nav from '../Nav.js'
 const API = process.env.REACT_APP_API_URL;
 
 export default function ProductDetails() {
@@ -47,6 +49,10 @@ export default function ProductDetails() {
         deleteProduct();
     }
 
+    const handleAddToCart = () => {
+      <Nav product={product}/>
+    }
+
 
   return (
 <div className="product-details">
@@ -62,7 +68,20 @@ export default function ProductDetails() {
       {product.instock ? 'In Stock' : 'Out of Stock'}
     </p>
     </Container>
-    <button className="product-details-button">Add to Cart</button>
+    <div>
+    <button onClick={handleAddToCart}>Add to Cart</button>
+    <button onClick={showModal}>DELETE</button>
+        <Modal show={isOpen} onHide={hideModal}>
+        <Modal.Header>
+          <Modal.Title>Confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this snack?</Modal.Body>
+        <Modal.Footer>
+          <button onClick={hideModal}>CANCEL</button>
+          <button onClick={handleDelete}>DELETE</button>
+        </Modal.Footer>
+      </Modal>
+      </div>
   </div>
 </div>
   );
