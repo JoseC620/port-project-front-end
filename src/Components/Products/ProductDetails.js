@@ -75,6 +75,9 @@ export default function ProductDetails() {
     <Link to={'/products'}>
       <button>Go Back</button>
       </Link>
+      <Link to={`/products/${id}/edit`}>
+        <button>Edit</button>
+      </Link>
     <button onClick={showModal}>Delete</button>
         <Modal show={isOpen} onHide={hideModal}>
         <Modal.Header>

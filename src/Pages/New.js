@@ -1,9 +1,9 @@
-
+import ProductNewForm from "../Components/Products/ProductNewForm"
 
 export default function New(){
     return(
         <div>
-            New Page
+            <ProductNewForm />
         </div>
     )
 }
