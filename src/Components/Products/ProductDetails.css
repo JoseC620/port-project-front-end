@@ -2,6 +2,7 @@
     display: flex;
     align-items: flex-start;
     padding: 20px;
+    background-color: #9DB2BF;
   }
   
   .product-details-name {
@@ -21,6 +22,7 @@
   .product-details-container {
     display: flex;
     flex-direction: column;
+
   }
   
   .product-details-price {
@@ -56,3 +58,4 @@
   .buttons {
     margin-left: 50px;
   }
+

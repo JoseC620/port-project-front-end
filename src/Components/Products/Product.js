@@ -10,7 +10,7 @@ export default function Product( { product } ) {
           </Link>
           <h3 className="product-name">{product.name}</h3>
           <p className="product-price">${product.cost}</p>
-          <Link to={`/products/${product.id}`} className="product-button">Add to Cart</Link>
+          <Link to={`/products/${product.id}`} className="product-button">Purchase!</Link>
         </div>
     </div>
   );

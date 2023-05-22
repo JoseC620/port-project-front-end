@@ -1,5 +1,6 @@
 .reviews {
     margin-top: 20px;
+    background-color: #E1D4BB;
   }
   
 .reviews h3 {
@@ -18,6 +19,7 @@
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: #E1D4BB;
   }
   
 .reviews li h4 {
@@ -35,11 +37,11 @@
   
 .no-reviews {
   margin-top: 20px;
-  background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #E1D4BB;
 }
 
 .newReview {

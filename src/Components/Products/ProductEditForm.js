@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ProductEditForm.css";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import { Rating } from 'react-simple-star-rating'
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -45,9 +48,6 @@ export default function ProductEditForm() {
     .put(`${API}/products/${id}`, updatedProduct)
     .then(
         () => {
-            console.log(updatedProduct)
-            console.log(product)
-            console.log(id)
             navigate(`/products/${id}`);
           },
           (error) => console.error(error)
@@ -55,14 +55,39 @@ export default function ProductEditForm() {
     .catch((c) => console.warn("catch", c));
 }
 
-const handleSubmit = (event) => {
+  const handleCategoryChange = (event) => {
+    setProduct({ ...product, category: event.value });
+  };
+
+
+  const handleSubmit = (event) => {
     event.preventDefault();
     updateProduct(product, id);
   };
 
+  const options = ['Electronics', 'Footwear', 'Home Appliances', 'Books', 'Sports Equipment']
+
   return (
+    <div className="edit-color">
     <div className="edit-container">
-      <img src={product.image} alt="product" className="edit-image" />
+    <div className="edit-product-info">
+    <h2 className="product-details-name">{product.name}</h2>
+    <img src={product.image} alt={product.name} className="edit-image" />
+    <br></br>
+    <p>Price: ${product.cost}</p>
+    <p>Category: {product.category}</p>
+    <p>Manufacturer: {product.manufacturer}</p>
+    <p>
+      {product.instock ? 'In Stock' : 'Out of Stock'}
+    </p>
+    <p>Rating: {product.rating}</p>
+    <Rating 
+      initialValue={product.rating}
+      allowFraction={true}
+      allowHover={false}
+      className="edit-rating"
+    />
+    </div>
       <form className="edit-form" onSubmit={handleSubmit}>
         <label htmlFor="image" className="edit-label">
           Image:
@@ -96,12 +121,14 @@ const handleSubmit = (event) => {
         <label htmlFor="category" className="edit-label">
           Category:
         </label>
-        <input
-          id="category"
-          type="text"
-          value={product.category}
-          onChange={handleTextChange}
-        />
+        <Dropdown 
+                className="drop"
+                options={options} 
+                onChange={handleCategoryChange}
+                value={product.category}
+                placeholder="Select an option" 
+                id='category'
+                />
 
         <label htmlFor="manufacturer" className="edit-label">
           Manufacturer:
@@ -135,6 +162,17 @@ const handleSubmit = (event) => {
           Save
         </button>
       </form>
+      <div>
+          <h3 className="preview">Card Preview</h3>
+          <br></br>
+          <div key={product.id} className="preview-product-card">
+          <img src={product.image} alt={product.name} className="product-image"/>
+          <h3 className="product-name">{product.name}</h3>
+          <p className="product-price">${product.cost}</p>
+          <button className="product-button">Add to Cart</button>
+        </div>
+        </div>
+    </div>
     </div>
   );
 }

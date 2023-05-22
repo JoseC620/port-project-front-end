@@ -5,8 +5,8 @@ import { Container } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './ProductDetails.css'
-import Nav from '../Nav.js'
 import Reviews from "../Reviews/Reviews";
+import { Rating } from 'react-simple-star-rating'
 const API = process.env.REACT_APP_API_URL;
 
 export default function ProductDetails() {
@@ -51,27 +51,29 @@ export default function ProductDetails() {
         deleteProduct();
     }
 
-    const handleAddToCart = () => {
-      <Nav product={product}/>
-    }
-
-
   return (
 <div className="product-details">
   <div className="product-details-container">
     <h2 className="product-details-name">{product.name}</h2>
     <img src={product.image} alt={product.name} className="product-details-image" />
     <Container className="product-info">
+    <br></br>
     <p>Price: ${product.cost}</p>
     <p>Category: {product.category}</p>
     <p>Manufacturer: {product.manufacturer}</p>
-    <p>Rating: {product.rating}</p>
     <p>
       {product.instock ? 'In Stock' : 'Out of Stock'}
     </p>
+    <p>Rating: {product.rating}</p>
+    <Rating 
+      initialValue={product.rating}
+      allowFraction={true}
+      allowHover={false}
+      className="rating"
+    />
     </Container>
     <div className="buttons">
-    <button onClick={handleAddToCart}>Add to Cart</button>
+    <button>Purchase!</button>
     <Link to={'/products'}>
       <button>Go Back</button>
       </Link>

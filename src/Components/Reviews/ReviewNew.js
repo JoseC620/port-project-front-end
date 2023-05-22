@@ -62,6 +62,7 @@ export default function ReviewNew( { hideModal, isOpen, handleAdd } ) {
               onChange={handleTextChange}
             ></textarea>
           </div>
+          <br></br>
           <Button variant="secondary" onClick={hideModal}>
             Cancel
           </Button>

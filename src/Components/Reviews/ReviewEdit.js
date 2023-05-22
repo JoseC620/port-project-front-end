@@ -66,6 +66,7 @@ export default function ReviewEdit( { hideEditModal, isOpen, review, handleEdit 
               onChange={handleTextChange}
             ></textarea>
           </div>
+          <br></br>
           <Button variant="secondary" onClick={hideEditModal}>
             Cancel
           </Button>

@@ -7,6 +7,8 @@ import Index from './Pages/Index';
 import New from './Pages/New';
 import Show from './Pages/Show';
 
+
+
 function App() {
 
   return (

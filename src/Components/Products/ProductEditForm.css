@@ -1,31 +1,66 @@
+
 .edit-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+  }
+  .edit-product-info {
+    font-size: 14px;
+    margin-bottom: 5px;
     margin-left: 100px;
   }
-  
+
   .edit-image {
     width: 300px;
     height: 300px;
-  
+    border-radius: 6px;
   }
   
   .edit-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    margin-left: 100px;
     margin-top: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    margin-left: 100px;
   }
-  
-  .edit-form, input {
-    width: 400px;
+
+  input {
+    width: 350px;
   }
 
   .inStock {
     width: 25px;
     height: 25px;
   }
+
+  .preview-product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-left: 80px;
+    align-items: center;
+    flex: 0 0 calc(25% - 20px);
+  }
+  
+  .edit-product-info p {
+    margin-left: 60px;
+  }
+
+  .preview {
+    margin-left: 80px;
+  }
+
+  .edit-rating {
+    margin-left: 30px;
+  }
+
+
+
+  
   

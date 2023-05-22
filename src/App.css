@@ -74,4 +74,22 @@
   background-color: #0056b3;
 }
 
+.home-div {
+  background-color: #9DB2BF;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin-top: -200px;
+}
+
+.navbar{
+  background-color: #526D82;
+}
 

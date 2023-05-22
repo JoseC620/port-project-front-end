@@ -1,9 +1,10 @@
 
+export default function Home() {
 
-export default function Home(){
-    return(
-        <div>
-            Home Page
-        </div>
-    )
+
+  return (
+    <div className="home-div">
+       <h2 className="home">Welcome to AlltheThings.com!</h2>
+    </div>
+  );
 }
