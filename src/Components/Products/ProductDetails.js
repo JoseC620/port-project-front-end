@@ -73,7 +73,6 @@ export default function ProductDetails() {
     />
     </Container>
     <div className="buttons">
-    <button>Purchase!</button>
     <Link to={'/products'}>
       <button>Go Back</button>
       </Link>
